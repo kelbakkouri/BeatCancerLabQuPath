@@ -2,8 +2,14 @@
 
 2. You need to remove all non-tiff files from your images folder. The RemoveFiles.py contains two functions within it. One removes all non-tiff files from a directory and the other removes all images with even number endings. You can use chatgpt to make other functions to better suit your needs, but at the very least run the remove all non-tiff functions with your root directory. 
 
-3. Open QuPath and click automate, (No need to open a project). Before starting this pleaes download
+3. Open QuPath and click automate, (No need to open a project). Before starting this please download "Add all images to project.groovy".
   a) Please select script editor
-  b) Pleaes select open script
-  c) Please select the fo
+  b) Pleaes select open script from file 
+  c) Please select the "Add all images to file script"
+  d) Click run and when prompted select the outermost directory in which you plan to run analysis upon a batch (I.E. I have an      an images folder but within that I will run to separate analysis types upon resistent and sensitive cells. I should go   
+     one directory further and select the resistant folder). 
+  e) Wait roughly 1 minute per 100 photos
+  f) Now minimize the script editor and click back to QuPath main editor. 
+  g) Click file and open project and then navigate and open the previous folder you selected. You should see a new QuPath           folder. Click this and then select the project file (It has a unique extension).
+
 
