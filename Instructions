@@ -12,4 +12,46 @@
   f) Now minimize the script editor and click back to QuPath main editor. 
   g) Click file and open project and then navigate and open the previous folder you selected. You should see a new QuPath           folder. Click this and then select the project file (It has a unique extension).
 
+4. NOTE HERE THERE ARE TWO OPTIONS. SELECT OPTION 1 AND THEN ANALYZE YOUR RESULTS. IF THEY ARE ADEQUATE THEN CONTINUE TO EXPORT. OTHERWISE TRY OPTION 2.
+
+OPTION 1:
+I created a basic cell counting script called "Run image counting analysis.groovy". This runs a basic counting script, you can download and try this first. Please recognize the settings preloaded may not work for everyone. 
+
+  a) Please download the "Run image counting analysis.groovy" from the repository.
+  b) Please go back to the script editor and open the "Run image counting analysis.groovy" file.
+  c) On the bottom right corner of the editor three dots indicate more options, click them and then "Run on Project"
+  d) Wait for roughly 5-10 minutes per 100 images
+  e) Check to see if it seems this script ran an adequate analysis
+
+Option 2:
+This will require a little more in depth understanding of QuPath, but still very doable. 
+
+  a) Select an image in the image list
+  b) Please hover click objects -> Annotations -> Create full image annotation
+  c) Pleaes hover click Analyze -> Cell Detection -> Cell Detection
+  d) The most important numbers to change will be THRESHOLD< SPLIT BY SHAPE, and BACKGROUND RADIUS. THRESHOLD adjust how     
+     much contrast needs to be detected for a cell to be identifyable; SPLIT BY SHAPE is meant to help with splitting clumps 
+     of cells, but may cause issues with counting; Background radius should be set to your largest cell nucleus. The 
+     background radius is what is used to find the background color in contrast to the cell color. The lower it is the more 
+     likely it will be to skip blobs of cells or larger cells. 
+  e) Once you have found a set of values that work well for your images, navigate to workflow in the left-project bar. 
+  f) Select Create Script
+  g) Please note there will be a large number of lines depending on how many tests of the cell detection parameters you ran.      Ensure that you only have one groovy line that says createAnnotationsFromPixelClassifier. Delete all, but the last one 
+     shown since those were your chosen settings.
+  h) Click the three dots in the bottom right corner of the editor and select "Run on Project" 
+  i) Wait approximately 5-10 minutes per 100 images
+
+5. Now it is time to export our results
+
+  a) Pleaes hover click measure -> export measurements
+  b) Click the double arrow in the middle of the "Available" and "Selected" windows.
+  c) Click image dropdown next to export type. Ensure annotations is clicked instead. 
+  d) Click on Tab (.tsv) next to Separator. Ensure Comma (.csv) is clicked instead.
+  e) Select choose to see what the file will be saved as and where it will be saved. Feel free to edit these if you have 
+     high computer literacy (You know your way around your directories).
+  f) Click Populate. This will take a moment to load.
+  g) Now click "image" and "num detections" and any other columns you may want. 
+  h) Finally click export.
+
+HOORAY YOU HAVE YOUR DATA!!!!
 
