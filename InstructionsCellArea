@@ -1,0 +1,65 @@
+1. First step is having all your photos downloaded to your computer. 
+
+2. You need to remove all non-tiff files from your images folder. The RemoveFiles.py contains two functions within it. One removes all non-tiff files from a directory and the other removes all images with even number endings. You can use chatgpt to make other functions to better suit your needs, but at the very least run the remove all non-tiff functions with your root directory. 
+
+3. Open QuPath and click automate, (No need to open a project). Before starting this please download "Add all images to project.groovy".
+  a) Please select script editor
+  b) Pleaes select open script from file 
+  c) Please select the "Add all images to file script"
+  d) Click run and when prompted select the outermost directory in which you plan to run analysis upon a batch (I.E. I have an      an images folder but within that I will run to separate analysis types upon resistent and sensitive cells. I should go   
+     one directory further and select the resistant folder). 
+  e) Wait roughly 1 minute per 100 photos
+  f) Now minimize the script editor and click back to QuPath main editor. 
+  g) Click file and open project and then navigate and open the previous folder you selected. You should see a new QuPath           folder. Click this and then select the project file (It has a unique extension).
+
+
+4. So we are going to be creating a thresholder and then running our workflow as an automation script. 
+
+  a) First hover click Objects -> Create full image annotation
+  b) Next go to Classify -> Pixel Classification -> Create Thresholder
+  c) A new window shows up. Adjust the settings as follow:
+      Resolution; Very High
+      Channel; Channel 1
+      Prefilter; Gaussian
+      Smoothing sigma; 0.5
+      Threshold; Please choose a threshold that highlights most of your cells. An overlay             should diplay this. Sometimes I need 35000 sometimes I need 22000.
+      Above threshold; Region
+      Below threshold; Blank
+      Region; Everywhere
+      Classifier Name; "INSERT APPROPIATE NAME" MAKE SURE TO CLICK SAVE
+  d) Click create object
+  e) Navigate to annotations and click select annotation, delete it with backspace, Make sure        to KEEP dependencies.
+  f) Navigate to workflow -> Create script
+  g) Click the three buttons in the bottom right of the script editor. 
+  h) Click run for project.
+
+
+5. Now it is time to export our results
+
+  a) Pleaes hover click measure -> export measurements
+  b) Click the double arrow in the middle of the "Available" and "Selected" windows.
+  c) Click image dropdown next to export type. Ensure annotations is clicked instead. 
+  d) Click on Tab (.tsv) next to Separator. Ensure Comma (.csv) is clicked instead.
+  e) Select choose to see what the file will be saved as and where it will be saved. Feel free to edit these if you have 
+     high computer literacy (You know your way around your directories).
+  f) Click Populate. This will take a moment to load.
+  g) Now click "image" and "num detections" and any other columns you may want. 
+  h) Finally click export.
+
+NOTE: YOU WILL NEED TO USE EXCEL, PYTHON, or JULIA to divide area by cell size. 
+
+7. HOW TO FIND CELL SIZE
+
+  a) Find an area of an image with decent unclumped area. 
+  b) Find the rectangle tool and select given area. 
+  c) Click hover Analyze -> Cell Detection -> Cell Detection
+        Change Background radiues to 15
+        Median filter radius at 0.5
+        Sigma to 0.5
+        Threshold at 400+
+  d) Click Run
+  e) Navigate to annotations and view bottom left corner. There is a small scroll in which you       need to go to bottom of. 
+  f) Find "Num Detections" and "Area um^2"
+  g) Divide "Area um^2" by "Num Detections" to get an average cell size. 
+
+HOORAY YOU HAVE YOUR DATA!!!!
