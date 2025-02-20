@@ -6,11 +6,11 @@
   a) Please select script editor
   b) Pleaes select open script from file 
   c) Please select the "Add all images to file script"
-  d) Click run and when prompted select the outermost directory in which you plan to run analysis upon a batch (I.E. I have an      an images folder but within that I will run to separate analysis types upon resistent and sensitive cells. I should go   
+  d) Click run and when prompted select the outermost directory in which you plan to run analysis upon a batch (I.E. I have an an images folder but within that I will run to separate analysis types upon resistent and sensitive cells. I should go   
      one directory further and select the resistant folder). 
   e) Wait roughly 1 minute per 100 photos
   f) Now minimize the script editor and click back to QuPath main editor. 
-  g) Click file and open project and then navigate and open the previous folder you selected. You should see a new QuPath           folder. Click this and then select the project file (It has a unique extension).
+  g) Click file and open project and then navigate and open the previous folder you selected. You should see a new QuPath folder. Click this and then select the project file (It has a unique extension).
 
 
 4. So we are going to be creating a thresholder and then running our workflow as an automation script. 
@@ -22,15 +22,15 @@
       Channel; Channel 1
       Prefilter; Gaussian
       Smoothing sigma; 0.5
-      Threshold; Please choose a threshold that highlights most of your cells. An overlay             should diplay this. Sometimes I need 35000 sometimes I need 22000.
+      Threshold; Please choose a threshold that highlights most of your cells. An overlay should diplay this. Sometimes I need 35000 sometimes I need 22000.
       Above threshold; Region
       Below threshold; Blank
       Region; Everywhere
       Classifier Name; "INSERT APPROPIATE NAME" MAKE SURE TO CLICK SAVE
   d) Click create object
-  e) Navigate to annotations and click select annotation, delete it with backspace, Make sure        to KEEP dependencies.
+  e) Navigate to annotations and click select annotation, delete it with backspace, Make sure to KEEP dependencies.
   f) Navigate to workflow -> Create script
-  g) Click the three buttons in the bottom right of the script editor. 
+  g) Click the three buttons in the bottom right of the script editor. In the CountArea.groovy has an example script. 
   h) Click run for project.
 
 
