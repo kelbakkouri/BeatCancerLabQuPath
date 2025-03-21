@@ -12,18 +12,9 @@
   f) Now minimize the script editor and click back to QuPath main editor. 
   g) Click file and open project and then navigate and open the previous folder you selected. You should see a new QuPath           folder. Click this and then select the project file (It has a unique extension).
 
-4. NOTE HERE THERE ARE TWO OPTIONS. SELECT OPTION 1 AND THEN ANALYZE YOUR RESULTS. IF THEY ARE ADEQUATE THEN CONTINUE TO EXPORT. OTHERWISE TRY OPTION 2.
+4. READ ALL STEPS CAREFULLY.
 
-OPTION 1:
-I created a basic cell counting script called "Run image counting analysis.groovy". This runs a basic counting script, you can download and try this first. Please recognize the settings preloaded may not work for everyone. 
-
-  a) Please download the "Run image counting analysis.groovy" from the repository.
-  b) Please go back to the script editor and open the "Run image counting analysis.groovy" file.
-  c) On the bottom right corner of the editor three dots indicate more options, click them and then "Run on Project"
-  d) Wait for roughly 5-10 minutes per 100 images
-  e) Check to see if it seems this script ran an adequate analysis
-
-Option 2:
+Option 1:
 This will require a little more in depth understanding of QuPath, but still very doable. 
 
   a) Select an image in the image list
@@ -43,7 +34,7 @@ This will require a little more in depth understanding of QuPath, but still very
 
 5. Now it is time to export our results
 
-  a) Pleaes hover click measure -> export measurements
+  a) Please hover click measure -> export measurements
   b) Click the double arrow in the middle of the "Available" and "Selected" windows.
   c) Click image dropdown next to export type. Ensure annotations is clicked instead. 
   d) Click on Tab (.tsv) next to Separator. Ensure Comma (.csv) is clicked instead.
